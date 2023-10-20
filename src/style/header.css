@@ -25,6 +25,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.header__container-search--block-logo{
+    cursor: pointer;
+}
 .header__container-link--block-link{
     display: flex;
     align-items: center;
@@ -166,4 +169,22 @@ margin-right: 25px;
 }
 .header__container-navbar--block-item-drop__down li:hover{
     filter: brightness(0) saturate(100%) invert(48%) sepia(11%) saturate(1628%) hue-rotate(96deg) brightness(95%) contrast(82%);
+}
+
+
+
+
+
+
+/* Base styles for .header and its children */
+
+
+/* For screens with a maximum width of 768px (e.g., smartphones) */
+@media (max-width: 768px) {
+    
+}
+
+/* For screens with a width between 769px and 1024px (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
 }

@@ -5,8 +5,6 @@ import { CSSTransition } from 'react-transition-group';
 import 'tailwindcss/tailwind.css';
 
 
-
-
 import Logo from '../image/logo.svg'
 import Lupa from '../image/lupa.svg'
 import Human from '../image/human.svg'
@@ -14,9 +12,7 @@ import Static from '../image/heart.png'
 import Heart from '../image/serdce.svg'
 import Basket from '../image/basket.svg'
 import Chevron from '../image/chevron-down.svg'
-
 const Header = () => {
-
 
 const dropdowns = [
     {
@@ -70,6 +66,14 @@ const dropdowns = [
           'Honor',
         ],
       },
+      {
+        title: 'Аксессуары',
+        isOpen: useState(false),
+        items: [
+          'Защитные стекла',
+          'Чехлы',
+        ],
+      },
   ];
 
   const toggleDropdown = (index) => {
@@ -93,20 +97,18 @@ const dropdowns = [
                 <p>Оплата</p>
                 <p>Новости</p>
             </div>
-
             <div className='header__container-link--block-number'>
                 <p>+7 (999) 999-9-999</p>
             </div>
         </div>
 
         <div className='header__container-search--block'>
-            <img className='eader__container-search--block-logo' src={Logo} />
+            <img className='header__container-search--block-logo' src={Logo} />
             <div className='header__container-search--block-search_bar'>
                 <input className='header__container-search--block-search_bar-input' type='text' />
                 <div className='header__container-search--block-search_bar-button__block'>
                     <img className='header__container-search--block-search_bar-button' src={Lupa} />
-                </div>
-                
+                </div> 
             </div> 
             <div className='header__container-search--block-search_bar-icons__block'>
                 <img className='header__container-search--block-search_bar-icons__block-human' src={Human} />
@@ -116,7 +118,6 @@ const dropdowns = [
                 <p className='header__container-search--block-search_bar-icons__block-price'>133 000 ₽</p>
             </div>
         </div>
-
 
         <div className='header__container-navbar--block'>
                     {dropdowns.map((dropdown, index) => (
