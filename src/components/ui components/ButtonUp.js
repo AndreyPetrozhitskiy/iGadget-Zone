@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../../style/buttonup.css';
+import '../../style/buttonup.scss';
 import Arrow from '../../image/arrow_up.svg';
 
 const ButtonUp = () => {

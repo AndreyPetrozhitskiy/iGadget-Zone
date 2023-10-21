@@ -1,4 +1,4 @@
-import '../style/header.css'
+import '../style/header.scss'
 import React from "react"
 import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';

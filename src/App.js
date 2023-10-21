@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header.js';
 import ButtonUp from './components/ui components/ButtonUp.js';
 import OneBlock from './components/Blocks/OneBlock.js';
+import Footer from './components/Blocks/Footer.js';
 function App() {
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
 for (let smoothLink of smoothLinks) {
@@ -19,7 +20,7 @@ for (let smoothLink of smoothLinks) {
     <div className="App">
       <Header />
       <OneBlock />
-      
+      <Footer />
      <ButtonUp />
     </div>
   );

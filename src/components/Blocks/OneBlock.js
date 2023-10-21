@@ -1,5 +1,5 @@
 import React from "react"
-import '../../style/oneblock.css'
+import '../../style/oneblock.scss'
 import ipad from '../../image/ipad.png'
 import macbook from '../../image/macbook.png'
 import SliderComp from "../ui components/SliderComp";

@@ -47,9 +47,11 @@
 .oneblock__container--brick__img{
     width: 422px;
     height: 212px;
-    border: 1px solid #404040;
+    border: 1px solid rgba(0, 0, 0, 0.13);
     border-radius: 15px;
     cursor: pointer;
+    padding: 1px;
+    
 }
 .oneblock__container--brick__p{
     width: 100%;
