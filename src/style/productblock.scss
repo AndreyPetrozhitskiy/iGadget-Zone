@@ -28,7 +28,7 @@
     
 }
 .product__block-container__nav-block--item{
-    width: 130px;
+    width: auto;
     height: 26px;
     color: #999999;
     border-radius: 10px;
@@ -38,9 +38,12 @@
     justify-content: center;
     align-items: center;
     margin-right: 15px;
-    padding: 5px;
+    
+    
     cursor: pointer;
     p{
+        margin-right: 10px;
+        margin-left: 10px;
         cursor: pointer;
         &:hover{
             color: rgb(0, 0, 0);

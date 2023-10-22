@@ -3,8 +3,6 @@ import React from "react"
 import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import 'tailwindcss/tailwind.css';
-import dropdowns from "../data";
-
 import Logo from '../image/logo.svg'
 import Lupa from '../image/lupa.svg'
 import Human from '../image/human.svg'
@@ -12,19 +10,31 @@ import Static from '../image/heart.png'
 import Heart from '../image/serdce.svg'
 import Basket from '../image/basket.svg'
 import Chevron from '../image/chevron-down.svg'
+import dropdownsData from '../data';
+
+
 const Header = () => {
 
-
-
+  const [dropdowns, setDropdowns] = useState(
+    dropdownsData.map((item) => ({
+      ...item,
+      isOpen: false,
+    }))
+    
+  );
+ 
   const toggleDropdown = (index) => {
-    dropdowns[index].isOpen[1](!dropdowns[index].isOpen[0]);
-    // Закройте другие списки при открытии этого списка, если это необходимо
-    dropdowns.forEach((dropdown, i) => {
-      if (i !== index) {
-        dropdown.isOpen[1](false);
-      }
+    setDropdowns((prevDropdowns) => {
+      const updatedDropdowns = prevDropdowns.map((dropdown, i) => {
+        return {
+          ...dropdown,
+          isOpen: i === index ? !dropdown.isOpen : false,
+        };
+      });
+      return updatedDropdowns;
     });
   };
+
   return (
     <div className='header'>
 
@@ -64,10 +74,10 @@ const Header = () => {
                         <div className="relative" data-te-dropdown-ref key={index}>
                             <div className="header__container-navbar--block-item" onClick={() => toggleDropdown(index)}>
                                 <p>{dropdown.title}</p>
-                                <img className={dropdown.isOpen[0] ? 'rotate-180' : ''} src={Chevron} alt="Chevron" />
+                                <img className={dropdown.isOpen ? 'rotate-180' : ''} src={Chevron} alt="Chevron" />
                             </div>
                             <CSSTransition
-                                in={dropdown.isOpen[0]}
+                                in={dropdown.isOpen}
                                 timeout={50}
                                 classNames="dropdown"
                                 unmountOnExit
@@ -75,6 +85,7 @@ const Header = () => {
                                 <ul className="header__container-navbar--block-item-drop__down">
                                     {dropdown.items.map((item, itemIndex) => (
                                         <li key={itemIndex}>
+                                          
                                             <a href="#">{item}</a>
                                         </li>
                                     ))}
