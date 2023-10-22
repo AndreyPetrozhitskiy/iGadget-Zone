@@ -3,7 +3,7 @@ import React from "react"
 import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import 'tailwindcss/tailwind.css';
-
+import dropdowns from "../data";
 
 import Logo from '../image/logo.svg'
 import Lupa from '../image/lupa.svg'
@@ -14,67 +14,7 @@ import Basket from '../image/basket.svg'
 import Chevron from '../image/chevron-down.svg'
 const Header = () => {
 
-const dropdowns = [
-    {
-      title: 'Смартфоны',
-      isOpen: useState(false),
-      items: [
-        'Apple iPhone',
-        'Samsung',
-        'Xiaomi',
-        'Huawei',
-        'Honor',
-        'OnePlus',
-        'Realme',
-        'Asus',
-      ],
-    },
-    // Добавьте другие списки и их элементы, если необходимо
-    {
-      title: 'Ноутбуки',
-      isOpen: useState(false),
-      items: [
-        'Apple MacBook',
-        'Xiaomi',
-        'Honor',
-      ],
-    },
-    {
-        title: 'Планшеты',
-        isOpen: useState(false),
-        items: [
-          'Apple Ipad',
-          'Xiaomi',
-          'Honor',
-        ],
-      },
-      {
-        title: 'Наушники',
-        isOpen: useState(false),
-        items: [
-          'Apple AirPods',
-          'Xiaomi',
-          'Honor',
-        ],
-      },
-      {
-        title: 'Телевизоры',
-        isOpen: useState(false),
-        items: [
-          'Samsung',
-          'Xiaomi',
-          'Honor',
-        ],
-      },
-      {
-        title: 'Аксессуары',
-        isOpen: useState(false),
-        items: [
-          'Защитные стекла',
-          'Чехлы',
-        ],
-      },
-  ];
+
 
   const toggleDropdown = (index) => {
     dropdowns[index].isOpen[1](!dropdowns[index].isOpen[0]);

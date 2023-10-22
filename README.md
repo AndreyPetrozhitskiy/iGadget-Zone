@@ -1,9 +1,8 @@
+# Figma Design
+[www.figma.com](https://www.figma.com/file/VEkcBzfmnYOFAWkCM6DsLp/React-Maket?type=design&node-id=0-1&mode=design&t=U96lYlW0bpKHNMRZ-0)
 # Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
-
+Figma
 In the project directory, you can run:
 ### `npm install`
 ### `npm start`
