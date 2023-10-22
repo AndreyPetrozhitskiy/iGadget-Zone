@@ -10,10 +10,12 @@ import Static from '../image/heart.png'
 import Heart from '../image/serdce.svg'
 import Basket from '../image/basket.svg'
 import Chevron from '../image/chevron-down.svg'
-import dropdownsData from '../data';
+// import dropdownsData from '../data';
+import { useSelector } from 'react-redux';
 
 
 const Header = () => {
+  const dropdownsData = useSelector( state => state )
 
   const [dropdowns, setDropdowns] = useState(
     dropdownsData.map((item) => ({
