@@ -38,6 +38,7 @@ const dropdowns = [
           'Apple AirPods',
           'Xiaomi',
           'Honor',
+          'JBL',
         ],
       },
       {
@@ -46,7 +47,7 @@ const dropdowns = [
         items: [
           'Samsung',
           'Xiaomi',
-          'JBL',
+          
         ],
       },
       {
