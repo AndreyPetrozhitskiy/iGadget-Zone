@@ -7,7 +7,7 @@
     font-family: 'Jost', sans-serif;
 }
 .product__block-container{
-    width: 1400px;
+    width: 1600px;
     height: 478px;
     
 }
@@ -18,6 +18,7 @@
     align-items: center;
     width: 100%;
     color: black;
+    margin-left: 117px;
 }
 .product__block-container__nav-block{
     width: 100%;
@@ -25,6 +26,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 117px;
     
 }
 .product__block-container__nav-block--item{

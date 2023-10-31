@@ -5,10 +5,13 @@ import OneBlock from './components/Blocks/OneBlock.js';
 import Footer from './components/Blocks/Footer.js';
 import ProductBlock from './components/Blocks/ProductBlock.js';
 import { useDispatch, useSelector } from 'react-redux';
-
+import gytuyi from './image/ipad.png'
 function App() {
   const dispatch = useDispatch()
   const dropdowns = useSelector( state => state )
+
+  // console.log(dropdowns[2].product[0]['Apple Watch'])
+
 
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
       for (let smoothLink of smoothLinks) {
@@ -25,12 +28,17 @@ function App() {
   return (
     <div className="App">
       <Header  />
+      
       <OneBlock />
+
       <p className='app__p'>Большой выбор цифровой техники</p>
+
       {dropdowns.map((item, itemIndex) => (
-        <ProductBlock key={itemIndex} h1={dropdowns[itemIndex].title} mass={dropdowns[itemIndex].items} />
+        <ProductBlock key={itemIndex} h1={dropdowns[itemIndex].title} mass={dropdowns[itemIndex].items} data={dropdowns[itemIndex].product[0]} />
       ))}
+     
       <Footer />
+
      <ButtonUp />
     </div>
   );

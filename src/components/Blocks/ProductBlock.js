@@ -7,6 +7,12 @@ const ProductBlock = (props) => {
     setSelectedItem(itemName);
   };
   const mass = props.mass;
+  const data_slider = props.data
+
+  
+
+  
+  // console.log(Object.keys(data_slider))
   return (
     <div className="product__block">
       <div className="product__block-container">
@@ -28,64 +34,16 @@ const ProductBlock = (props) => {
           ))}
         </div>
         <div className="product__block-container__slider">
-          <SliderProduct />
-          {/* В него будут передаваться пропсы(фотографию и массив с данными:
-                Массив ввида
-                    Телефоны
-                        Бренд:Apple
-                            1 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            2 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            3 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            4 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                        Бренд:Samsung
-                            1 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            2 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            3 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            3 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                    Ноутбуки
-                        Бренд:Apple
-                            1 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            2 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            3 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                            4 Карточка
-                                Модель:
-                                Цена:
-                                Фото:
-                    И т.д
-                ) */}
+        {Object.keys(data_slider).map((item, itemIndex) => (
+           
+            <SliderProduct key={itemIndex} array_product={data_slider[item]}/>
+          ))}
+          {/* <SliderProduct /> */}
+           
+
+
+              
+
         </div>
       </div>
     </div>
