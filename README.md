@@ -3,8 +3,12 @@
 # Getting Started with  React App
 ## Available Scripts
 In the project directory, you can run:
+#
 nodeJs v20
+#
 npm v9
+#
+#
 ### `npm install`
 ### `npm start`
 
