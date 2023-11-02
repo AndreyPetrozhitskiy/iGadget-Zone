@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 import "../../style/productblock.scss";
 import SliderProduct from "../ui components/SliderProduct";
+
 const ProductBlock = (props) => {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const data_slider = props.data
+  const itemNameData = Object.keys(data_slider)
+  const [selectedItem, setSelectedItem] = useState(itemNameData[0]);
   const handleItemClick = (itemName) => {
     setSelectedItem(itemName);
   };
-  const mass = props.mass;
-  const data_slider = props.data
-
-  
-
-  
-  // console.log(Object.keys(data_slider))
+  const slider_index = props.slider_index
   return (
     <div className="product__block">
       <div className="product__block-container">
         <p className="product__block-container__h1">{props.h1}</p>
         <div className="product__block-container__nav-block">
-          {mass.map((item, itemIndex) => (
+          {Object.keys(data_slider).map((item, itemIndex) => (
             <div
               className={`product__block-container__nav-block--item ${
                 selectedItem === item ||
@@ -34,16 +31,7 @@ const ProductBlock = (props) => {
           ))}
         </div>
         <div className="product__block-container__slider">
-        {Object.keys(data_slider).map((item, itemIndex) => (
-           
-            <SliderProduct key={itemIndex} array_product={data_slider[item]}/>
-          ))}
-          {/* <SliderProduct /> */}
-           
-
-
-              
-
+            <SliderProduct slider_index={slider_index} array_product={data_slider[selectedItem]}/>
         </div>
       </div>
     </div>

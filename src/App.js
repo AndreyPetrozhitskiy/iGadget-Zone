@@ -1,24 +1,18 @@
 import React from 'react';
+import {Routes, Route,Link } from 'react-router-dom'
+// Компоненты
 import Header from './components/Header.js';
 import ButtonUp from './components/ui components/ButtonUp.js';
-import OneBlock from './components/Blocks/OneBlock.js';
-import Footer from './components/Blocks/Footer.js';
-import ProductBlock from './components/Blocks/ProductBlock.js';
-import { useDispatch, useSelector } from 'react-redux';
-import gytuyi from './image/ipad.png'
+import Footer from './components/Footer.js';
+import HomePage from './components/HomePage.js';
+
 function App() {
-  const dispatch = useDispatch()
-  const dropdowns = useSelector( state => state )
-
-  // console.log(dropdowns[2].product[0]['Apple Watch'])
-
-
+    // Плавный переход по ссылкам
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
       for (let smoothLink of smoothLinks) {
     smoothLink.addEventListener('click', function (e) {
         e.preventDefault();
         const id = smoothLink.getAttribute('href');
-
         document.querySelector(id).scrollIntoView({
             behavior: 'smooth',
             block: 'start'
@@ -28,17 +22,10 @@ function App() {
   return (
     <div className="App">
       <Header  />
-      
-      <OneBlock />
-
-      <p className='app__p'>Большой выбор цифровой техники</p>
-
-      {dropdowns.map((item, itemIndex) => (
-        <ProductBlock key={itemIndex} h1={dropdowns[itemIndex].title} mass={dropdowns[itemIndex].items} data={dropdowns[itemIndex].product[0]} />
-      ))}
-     
+      <Routes >
+        <Route path='/' element={<HomePage />}/>
+      </Routes>
       <Footer />
-
      <ButtonUp />
     </div>
   );

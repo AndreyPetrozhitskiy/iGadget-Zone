@@ -3,8 +3,9 @@ import "../../style/oneblock.scss";
 import ipad from "../../image/ipad.png";
 import macbook from "../../image/macbook.png";
 import SliderComp from "../ui components/SliderComp";
-
+import oneBlockData from "../../Data/oneBlockData"
 const OneBlock = () => {
+  console.log(oneBlockData[1])
   return (
     <div className="oneblock">
       <div className="oneblock__container">
@@ -13,13 +14,13 @@ const OneBlock = () => {
         </div>
         <div className="oneblock__container--bricks">
           <div className="oneblock__container--brick-one">
-            <img src={ipad} className="oneblock__container--brick__img" />
-            <p className="oneblock__container--brick__p">Apple Ipad 2022</p>
+            <img src={oneBlockData[1][0].Photo} className="oneblock__container--brick__img" />
+            <p className="oneblock__container--brick__p">{oneBlockData[1][0].Text}</p>
           </div>
           <div className="oneblock__container--bricks-two">
-            <img src={macbook} className="oneblock__container--brick__img" />
+            <img src={oneBlockData[1][1].Photo} className="oneblock__container--brick__img" />
             <p className="oneblock__container--brick__p">
-              Apple MacBook Pro 13.6
+            {oneBlockData[1][1].Text}
             </p>
           </div>
         </div>

@@ -12,7 +12,9 @@ import Basket from "../image/basket.svg";
 import Chevron from "../image/chevron-down.svg";
 import { useSelector } from "react-redux";
 
+
 const Header = () => {
+  // Получение массива с инфой
   const dropdownsData = useSelector((state) => state);
 
   const [dropdowns, setDropdowns] = useState(
@@ -56,6 +58,7 @@ const Header = () => {
             <input
               className="header__container-search--block-search_bar-input"
               type="text"
+              placeholder="Поиск"
             />
             <div className="header__container-search--block-search_bar-button__block">
               <img
@@ -65,10 +68,14 @@ const Header = () => {
             </div>
           </div>
           <div className="header__container-search--block-search_bar-icons__block">
-            <img
-              className="header__container-search--block-search_bar-icons__block-human"
-              src={Human}
-            />
+            <div className="header__container-search--block-search_bar-icons__block-user">
+              <img
+                className="header__container-search--block-search_bar-icons__block-human"
+                src={Human}
+              />
+              <p className="header__container-navbar--block__name">Александр</p>
+            </div>
+           
             <img
               className="header__container-search--block-search_bar-icons__block-static"
               src={Static}
@@ -77,13 +84,17 @@ const Header = () => {
               className="header__container-search--block-search_bar-icons__block-heart"
               src={Heart}
             />
-            <img
-              className="header__container-search--block-search_bar-icons__block-basket"
-              src={Basket}
-            />
-            <p className="header__container-search--block-search_bar-icons__block-price">
-              133 000 ₽
-            </p>
+            <div className="header__container-search--block-search_bar-icons__block--basket__block">
+              <img
+                className="header__container-search--block-search_bar-icons__block-basket"
+                src={Basket}
+              />
+              <p className="header__container-search--block-search_bar-icons__block-price">
+                133 000 ₽
+              </p>
+            </div>
+            
+         
           </div>
         </div>
 
@@ -115,8 +126,10 @@ const Header = () => {
                   ))}
                 </ul>
               </CSSTransition>
+              
             </div>
           ))}
+          
         </div>
       </div>
     </div>

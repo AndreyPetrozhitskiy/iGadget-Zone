@@ -4,6 +4,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../../style/slider.scss";
+import oneBlockData from '../../Data/oneBlockData'
 
 const SliderComp = () => {
   return (
@@ -16,38 +17,18 @@ const SliderComp = () => {
         modules={[Autoplay, Pagination]}
         loop={true}
       >
-        <SwiperSlide>
-          <div className="slider__slide-img__1">
-            <div className="slider__slide-p">
-              <div className="slider__slide-p-fade"></div>
-              <p className="">iPhone 15 Pro</p>
+        {oneBlockData[0].map((item,itemIndex)=>(
+          <SwiperSlide key={itemIndex}>
+            <div className="slider__slide">
+              <img className="slider__slide-img" src={item.Photo}/>
+              <div className="slider__slide-p">
+                <div className="slider__slide-p-fade">
+                  <p className="">{item.Text}</p>
+                </div>
+              </div>
             </div>
-          </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="slider__slide-img__2">
-            <div className="slider__slide-p">
-              <div className="slider__slide-p-fade"></div>
-              <p className="">iPhone 14 Pro</p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slider__slide-img__3">
-            <div className="slider__slide-p">
-              <div className="slider__slide-p-fade"></div>
-              <p className="">iPhone 13 Pro</p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="slider__slide-img__4">
-            <div className="slider__slide-p">
-              <div className="slider__slide-p-fade"></div>
-              <p className="">Apple MacBook Pro</p>
-            </div>
-          </div>
-        </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

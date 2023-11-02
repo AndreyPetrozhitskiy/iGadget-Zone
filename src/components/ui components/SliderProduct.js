@@ -1,32 +1,56 @@
 import React from "react"
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
-
 import '../../style/slider-product.scss'
 import { Navigation } from 'swiper/modules';
-
-import Photo from '../../image/large_30059040bb 1.png'
 import Static from "../../image/heart.png";
 import Heart from "../../image/serdce.svg";
+import { useState } from "react";
+// import 'swiper/css/navigation';
 
 const SliderProduct = (props) => {
+  // const [basket, setBasket] = useState(0);
+  // const buttonText = basket === 0 ? 'В корзину' : `+${basket}`;
+  // function StateBasket() {
+  //   setBasket(basket + 1);
+  // }
   
-  const array_product = props.array_product
 
-  console.log(array_product)
+  // Форматирование цеников
+  function formatPrice(price) {
+    if (typeof price === 'number') {
+      price = price.toString();
+    }
+    
+    if (price.length > 3) {
+      price = price.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+    
+    return price;
+  }
+  // Product (Инфа для слайдов)
+  const array_product = props.array_product
+  const slider_index = props.slider_index
+  const [basket, setBasket] = useState([]);
+  function StateBasket(index) {
+    setBasket(prevBasket => {
+      const newBasket = [...prevBasket];
+      newBasket[index] = newBasket[index] ? newBasket[index] + 1 : 1;
+      return newBasket;
+    });
+  }
+  // console.log(array_product)
   return (
     <div className="slider__product">
-      
+      <div className={`swiper-button-prev-${slider_index}`} ></div>
       <Swiper
            modules={[Navigation]} 
            navigation={{
-               nextEl: '.swiper-button-next',
-               prevEl: '.swiper-button-prev',
+               nextEl: `.swiper-button-next-${slider_index}`,
+               prevEl: `.swiper-button-prev-${slider_index}`,
            }} 
+      
            initialSlide={0}
            spaceBetween={35}
            slidesPerView={6}
@@ -37,42 +61,23 @@ const SliderProduct = (props) => {
             <SwiperSlide key={itemIndex} className="slider__product--swiper__item" >
             <img src={item.Photo} />
                 <p>{item.Model} </p>
-                <p>{item.Price}   {"₽"} </p>
-                <div className="slider__product--swiper__item-two">
-                    <div className="slider__product--swiper__item-two-content">
-                        <button >В корзину</button>
-                        <div className="slider__product--swiper__item-two-content-btnka">
-                          <img src={Heart} /> 
+                <p>{formatPrice(item.Price)}   {"₽"} </p>
+                  <div className="slider__product--swiper__item--buttons">
+                    {/* <button onClick={StateBasket}>{buttonText}</button> */}
+                    <button onClick={() => StateBasket(itemIndex)}>{basket[itemIndex] ? `+${basket[itemIndex]}` : 'В корзину'}</button>
+                        <div className="slider__product--swiper__item--buttons-btnka">
+                          <img className="card_button--basket" src={Heart} /> 
                         </div>
-                        <div className="slider__product--swiper__item-two-content-btnka">
-                          <img src={Static} /> 
+                        <div className="slider__product--swiper__item--buttons-btnka">
+                          <img  className="card_button--basket" src={Static} />
                         </div>
-                    </div>
-                </div>
+                  </div>
             </SwiperSlide>
          ))}
-        {/* <SwiperSlide className="slider__product--swiper__item" >
-        <img src={Photo} />
-            <p>iPhone 13 Pro 128Gb </p>
-            <p>67 499  {"₽"} </p>
-            <div className="slider__product--swiper__item-two">
-                <div className="slider__product--swiper__item-two-content">
-                    <button >В корзину</button>
-                    <div className="slider__product--swiper__item-two-content-btnka">
-                      <img src={Heart} /> 
-                    </div>
-                    <div className="slider__product--swiper__item-two-content-btnka">
-                      <img src={Static} /> 
-                    </div>
-                </div>
-            </div>
-        </SwiperSlide> */}
-       
-      
-    
       </Swiper>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        
+        <div className={`swiper-button-next-${slider_index}`}></div>
+      
     </div>
   )
 };

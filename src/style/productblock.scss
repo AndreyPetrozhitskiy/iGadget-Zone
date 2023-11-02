@@ -1,6 +1,6 @@
 .product__block{
     width: 100%;
-    height: 478px;
+    height: 460px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -8,7 +8,7 @@
 }
 .product__block-container{
     width: 1600px;
-    height: 478px;
+    height: 460px;
     
 }
 .product__block-container__h1{
@@ -60,3 +60,8 @@
     color: rgb(255, 255, 255);
 }
   }
+  .product__block-container__slider{
+    width: 1600px;
+    height: 370px;
+    
+}

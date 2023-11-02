@@ -1,17 +1,17 @@
 // Импорт фото
-import iphone13pro from './image/iphone13card.webp'
-import s23 from './image/samsungs22.webp'
-import poco from './image/poco.webp'
-import pixel from './image/pixel.webp'
-import oneplus from './image/oneplus.webp'
-import oppo from './image/oppo.webp'
-import macbook from './image/macboooook.webp'
-import xiaomibook from './image/large_noutbuk_xiaomi_redmi_g_2022_jyu4490cn_4__1_.webp'
-import watch from './image/applewatch.webp'
-import gwatch from './image/googlewatch.webp'
-import airpods from './image/airpods2.webp'
-import buds3 from './image/buds3pro.webp'
-import jbl from './image/jbl.webp'
+import iPhone13pro from '.././image/iphone13card.webp'
+import s23 from '.././image/samsungs22.webp'
+import poco from '.././image/poco.webp'
+import pixel from '.././image/pixel.webp'
+import oneplus from '.././image/oneplus.webp'
+import oppo from '.././image/oppo.webp'
+import macbook from '.././image/macboook.jpg'
+import xiaomibook from '.././image/large_noutbuk_xiaomi_redmi_g_2022_jyu4490cn_4__1_.webp'
+import watch from '.././image/applewatch.webp'
+import gwatch from '.././image/googlewatch.webp'
+import airpods from '.././image/airpods2.webp'
+import buds3 from '.././image/buds3pro.webp'
+import jbl from '.././image/jbl.webp'
 const dropdowns = [
     // Телефоны
     {
@@ -29,44 +29,44 @@ const dropdowns = [
         {
           'Apple iPhone':[
             {
-                Model: 'Iphone 13 Pro',
+                Model: 'iPhone 13 Pro',
                 Price: 70000,
-                Photo: iphone13pro
+                Photo: iPhone13pro
             }, 
             {
-                Model: 'Iphone 13 Pro',
+                Model: 'iPhone 13 Pro',
                 Price: 70000,
-                Photo: iphone13pro
+                Photo: iPhone13pro
             }, 
             {
-                Model: 'Iphone 13 Pro',
+                Model: 'iPhone 13 Pro',
                 Price: 70000,
-                Photo: iphone13pro
+                Photo: iPhone13pro
             }, 
             {
-                Model: 'Iphone 13 Pro',
+                Model: 'iPhone 13 Pro',
                 Price: 70000,
-                Photo: iphone13pro
+                Photo: iPhone13pro
             },
             {
-              Model: 'Iphone 13 Pro',
+              Model: 'iPhone 13 Pro',
               Price: 70000,
-              Photo: iphone13pro
+              Photo: iPhone13pro
           },
             {
-              Model: 'Iphone 13 Pro',
+              Model: 'iPhone 13 Pro',
               Price: 70000,
-              Photo: iphone13pro
+              Photo: iPhone13pro
           },
           {
-            Model: 'Iphone 13 Pro',
+            Model: 'iPhone 13 Pro',
             Price: 70000,
-            Photo: iphone13pro
+            Photo: iPhone13pro
         },
         {
-          Model: 'Iphone 13 Pro',
+          Model: 'iPhone 13 Pro',
           Price: 70000,
-          Photo: iphone13pro
+          Photo: iPhone13pro
       },
       ],
           Samsung:[
@@ -441,37 +441,37 @@ const dropdowns = [
           ],
           Xiaomi:[
             {
-              Model: 'Xiaomi Mi True Wireless Earphone 3 Pro',
+              Model: 'Xiaomi Mi  Earphone 3 Pro',
               Price: 5999,
               Photo: buds3
             }, 
             {
-              Model: 'Xiaomi Mi True Wireless Earphone 3 Pro',
+              Model: 'Xiaomi Mi  Earphone 3 Pro',
               Price: 5999,
               Photo: buds3
             }, 
             {
-              Model: 'Xiaomi Mi True Wireless Earphone 3 Pro',
+              Model: 'Xiaomi Mi  Earphone 3 Pro',
               Price: 5999,
               Photo: buds3
             }, 
             {
-              Model: 'Xiaomi Mi True Wireless Earphone 3 Pro',
+              Model: 'Xiaomi Mi  Earphone 3 Pro',
               Price: 5999,
               Photo: buds3
             }, 
             {
-              Model: 'Xiaomi Mi True Wireless Earphone 3 Pro',
+              Model: 'Xiaomi Mi  Earphone 3 Pro',
               Price: 5999,
               Photo: buds3
             }, 
             {
-              Model: 'Xiaomi Mi True Wireless Earphone 3 Pro',
+              Model: 'Xiaomi Mi  Earphone 3 Pro',
               Price: 5999,
               Photo: buds3
             }, 
             {
-              Model: 'Xiaomi Mi True Wireless Earphone 3 Pro',
+              Model: 'Xiaomi Mi  Earphone 3 Pro',
               Price: 5999,
               Photo: buds3
             }, 
