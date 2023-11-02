@@ -19,7 +19,16 @@
     width: 100%;
     color: black;
     margin-left: 117px;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    &::after{
+        content: url(../image/arrowssssssssssssssssssssssss.svg);
+        margin-left: 10px;
+        
+    }
 }
+
 .product__block-container__nav-block{
     width: 100%;
     height: 35px;

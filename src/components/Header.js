@@ -14,6 +14,12 @@ import { useSelector } from "react-redux";
 
 
 const Header = () => {
+  const ggg = () =>{
+    alert("Открылся каталог с этой категорией")
+  }
+  const ggg1 = () =>{
+    alert("Пошел поиск")
+  }
   // Получение массива с инфой
   const dropdownsData = useSelector((state) => state);
 
@@ -62,6 +68,7 @@ const Header = () => {
             />
             <div className="header__container-search--block-search_bar-button__block">
               <img
+                onClick={ggg1}
                 className="header__container-search--block-search_bar-button"
                 src={Lupa}
               />
@@ -121,7 +128,7 @@ const Header = () => {
                 <ul className="header__container-navbar--block-item-drop__down">
                   {dropdown.items.map((item, itemIndex) => (
                     <li key={itemIndex}>
-                      <a href="#">{item}</a>
+                      <a href="#" onClick={ggg}>{item}</a>
                     </li>
                   ))}
                 </ul>
