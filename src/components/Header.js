@@ -12,7 +12,7 @@ import Basket from "../image/basket.svg";
 import Chevron from "../image/chevron-down.svg";
 import { useSelector } from "react-redux";
 
-
+import {NavLink } from 'react-router-dom'
 const Header = () => {
   const ggg = () =>{
     alert("Открылся каталог с этой категорией")
@@ -47,11 +47,11 @@ const Header = () => {
       <div className="header__container">
         <div className="header__container-link--block">
           <div className="header__container-link--block-link">
-            <p>О компании</p>
-            <p>Контакты</p>
-            <p>Доставка</p>
-            <p>Оплата</p>
-            <p>Новости</p>
+          <NavLink to='/company'> <p>О компании</p></NavLink>
+          <NavLink to='/contacts'><p>Контакты</p></NavLink>
+          <NavLink to='/delivery'><p>Доставка</p></NavLink>
+          <NavLink to='/payment'><p>Оплата</p></NavLink>
+          <NavLink to='/news'><p>Новости</p></NavLink>
           </div>
           <div className="header__container-link--block-number">
             <p>+7 (999) 999-9-999</p>
@@ -59,7 +59,7 @@ const Header = () => {
         </div>
 
         <div className="header__container-search--block">
-          <img className="header__container-search--block-logo" src={Logo} />
+          <NavLink to='/'><img className="header__container-search--block-logo" src={Logo} /></NavLink>
           <div className="header__container-search--block-search_bar">
             <input
               className="header__container-search--block-search_bar-input"
