@@ -3,9 +3,8 @@ import "../../style/oneblock.scss";
 import ipad from "../../image/ipad.png";
 import macbook from "../../image/macbook.png";
 import SliderComp from "../ui components/SliderComp";
-import oneBlockData from "../../Data/oneBlockData"
+import oneBlockData from "../../store/oneBlockData"
 const OneBlock = () => {
-  console.log(oneBlockData[1])
   return (
     <div className="oneblock">
       <div className="oneblock__container">

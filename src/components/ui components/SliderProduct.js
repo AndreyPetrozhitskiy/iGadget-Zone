@@ -40,7 +40,7 @@ const SliderProduct = (props) => {
       return newBasket;
     });
   }
-  // console.log(array_product)
+  
   return (
     <div className="slider__product">
       <div className={`swiper-button-prev-${slider_index}`} ></div>

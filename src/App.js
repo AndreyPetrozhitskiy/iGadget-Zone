@@ -11,7 +11,9 @@ import Delivery from './components/header_blocks/Delivery.js';
 import Payment from './components/header_blocks/Payment.js';
 import News from './components/header_blocks/News.js';
 import NotFaundPage from './components/Blocks/NotFaundPage.js';
-
+import Auth from './components/Blocks/Auth.js';
+import Register from './components/Blocks/Register.js';
+import Basket from './components/Blocks/Basket.js';
 
 function App() {
     // Плавный переход по ссылкам
@@ -36,6 +38,9 @@ function App() {
         <Route path='/delivery' element={<Delivery />}/>
         <Route path='/payment' element={<Payment />}/>
         <Route path='/news' element={<News />}/>
+        <Route path='/auth' element={<Auth />}/>
+        <Route path='/register' element={<Register />}/>
+        <Route path='/basket' element={<Basket />}/>
         <Route path='*' element={<NotFaundPage />}/>
       </Routes>
       <Footer />

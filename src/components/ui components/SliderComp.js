@@ -4,7 +4,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "../../style/slider.scss";
-import oneBlockData from '../../Data/oneBlockData'
+import oneBlockData from '../../store/oneBlockData'
 
 const SliderComp = () => {
   return (

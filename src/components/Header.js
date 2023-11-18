@@ -14,6 +14,21 @@ import { useSelector } from "react-redux";
 
 import {NavLink } from 'react-router-dom'
 const Header = () => {
+  const [priceBusket, setPriceBusket] = useState(130000)
+  function formatPrice(price) {
+    if (typeof price === 'number') {
+      price = price.toString();
+    }
+    
+    if (price.length > 3) {
+      price = price.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+    
+    return price;
+  }
+
+
+
   const ggg = () =>{
     alert("Открылся каталог с этой категорией")
   }
@@ -22,7 +37,7 @@ const Header = () => {
   }
   // Получение массива с инфой
   const dropdownsData = useSelector((state) => state);
-
+  console.log(dropdownsData)
   const [dropdowns, setDropdowns] = useState(
     dropdownsData.map((item) => ({
       ...item,
@@ -76,10 +91,10 @@ const Header = () => {
           </div>
           <div className="header__container-search--block-search_bar-icons__block">
             <div className="header__container-search--block-search_bar-icons__block-user">
-              <img
+            <NavLink to='/auth'><img
                 className="header__container-search--block-search_bar-icons__block-human"
                 src={Human}
-              />
+              /></NavLink>
               <p className="header__container-navbar--block__name">Александр</p>
             </div>
            
@@ -92,12 +107,12 @@ const Header = () => {
               src={Heart}
             />
             <div className="header__container-search--block-search_bar-icons__block--basket__block">
-              <img
+            <NavLink to='/basket'><img
                 className="header__container-search--block-search_bar-icons__block-basket"
                 src={Basket}
-              />
+              /></NavLink>
               <p className="header__container-search--block-search_bar-icons__block-price">
-                133 000 ₽
+                 {formatPrice(priceBusket)}   {"₽"} 
               </p>
             </div>
             

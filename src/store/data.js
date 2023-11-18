@@ -12,6 +12,37 @@ import gwatch from '.././image/googlewatch.webp'
 import airpods from '.././image/airpods2.webp'
 import buds3 from '.././image/buds3pro.webp'
 import jbl from '.././image/jbl.webp'
+
+
+import { createSlice } from '@reduxjs/toolkit'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const dropdowns = [
     // Телефоны
     {
@@ -517,8 +548,12 @@ const dropdowns = [
         },
         ]
       },
+    
+      
+  ];
+  export default dropdowns;
 
-      // ПОТОМ!!!!!!
+  // ПОТОМ!!!!!!
 
 
       // {
@@ -554,5 +589,3 @@ const dropdowns = [
       //     ],
       //   }
       // },
-  ];
-  export default dropdowns;
