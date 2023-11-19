@@ -1,21 +1,26 @@
 import React from 'react';
-import {Routes, Route,Link } from 'react-router-dom'
+import { useSelector } from "react-redux";
 // Компоненты
 import Header from './components/Header.js';
 import ButtonUp from './components/ui components/ButtonUp.js';
 import Footer from './components/Footer.js';
-import HomePage from './components/HomePage.js';
-import Company from './components/header_blocks/Company.js';
-import Contacts from './components/header_blocks/Contacts.js';
-import Delivery from './components/header_blocks/Delivery.js';
-import Payment from './components/header_blocks/Payment.js';
-import News from './components/header_blocks/News.js';
-import NotFaundPage from './components/Blocks/NotFaundPage.js';
-import Auth from './components/Blocks/Auth.js';
-import Register from './components/Blocks/Register.js';
-import Basket from './components/Blocks/Basket.js';
+
+import AppRouter from './components/AppRouter.js';
 
 function App() {
+  const ggggg = useSelector(state => state.auth.authdataMassive);
+  console.log(ggggg)
+
+
+
+
+
+
+
+
+
+
+
     // Плавный переход по ссылкам
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
       for (let smoothLink of smoothLinks) {
@@ -30,21 +35,10 @@ function App() {
 };
   return (
     <div className="App">
-      <Header  />
-      <Routes >
-        <Route path='/' element={<HomePage />}/>
-        <Route path='/company' element={<Company />}/>
-        <Route path='/contacts' element={<Contacts />}/>
-        <Route path='/delivery' element={<Delivery />}/>
-        <Route path='/payment' element={<Payment />}/>
-        <Route path='/news' element={<News />}/>
-        <Route path='/auth' element={<Auth />}/>
-        <Route path='/register' element={<Register />}/>
-        <Route path='/basket' element={<Basket />}/>
-        <Route path='*' element={<NotFaundPage />}/>
-      </Routes>
+      <Header />
+      <AppRouter />
       <Footer />
-     <ButtonUp />
+     <ButtonUp/>
     </div>
   );
 }

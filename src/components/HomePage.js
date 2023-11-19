@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 const HomePage = () => {
     const dispatch = useDispatch()
     // Получение массива с инфой
-    const dropdowns = useSelector( state => state )
+    const dropdowns = useSelector(state => state.data.oneBlockDataMassive);
+  
   return (
     
     <div className="HomePage">

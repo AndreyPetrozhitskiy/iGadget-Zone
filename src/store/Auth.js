@@ -1,37 +1,26 @@
+import authdata from "./Products/DataAuth"
+
 import { createSlice } from '@reduxjs/toolkit'
 
-const login = [
-    // {
-    //     login: "andrey",
-    //     password: 12344
-    // },
-
-]
-
-
-
-
-// const login = [
-//     // {
-//     //     login: "andrey",
-//     //     password: 12344
-//     // },
-
-// ]
-const DataBaseUser = [
-    {
-        login: "andrey1",
-        password: 12344
+const dataAuthSlice = createSlice(
+  {
+    name: 'oneBlockData',
+    initialState: {
+        authdataMassive: authdata,
     },
-    {
-        login: "andrey2",
-        password: 12344
-    },
-    {
-        login: "andrey3",
-        password: 12344
-    },
-]
-// const name = login[0].login
+    reducers: {
 
-export default login
+      // что-то пока хз
+    }
+    
+  }
+)
+
+export const {} = dataAuthSlice.actions
+export default dataAuthSlice.reducer  
+
+
+
+
+
+

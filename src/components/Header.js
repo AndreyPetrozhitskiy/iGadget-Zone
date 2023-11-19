@@ -26,18 +26,16 @@ const Header = () => {
     
     return price;
   }
-
-
-
   const ggg = () =>{
     alert("Открылся каталог с этой категорией")
   }
   const ggg1 = () =>{
     alert("Пошел поиск")
   }
+
   // Получение массива с инфой
-  const dropdownsData = useSelector((state) => state);
-  console.log(dropdownsData)
+  const dropdownsData = useSelector(state => state.data.oneBlockDataMassive);
+
   const [dropdowns, setDropdowns] = useState(
     dropdownsData.map((item) => ({
       ...item,
