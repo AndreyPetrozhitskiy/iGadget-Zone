@@ -10,10 +10,11 @@ import Static from "../image/heart.png";
 import Heart from "../image/serdce.svg";
 import Basket from "../image/basket.svg";
 import Chevron from "../image/chevron-down.svg";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
 import {NavLink } from 'react-router-dom'
 const Header = () => {
+  const DataAuth = useSelector(state => state.auth.authdataMassive)
+  const Name = DataAuth[0].login
   const [priceBusket, setPriceBusket] = useState(130000)
   function formatPrice(price) {
     if (typeof price === 'number') {
@@ -93,7 +94,7 @@ const Header = () => {
                 className="header__container-search--block-search_bar-icons__block-human"
                 src={Human}
               /></NavLink>
-              <p className="header__container-navbar--block__name">Александр</p>
+              <p className="header__container-navbar--block__name">{Name}</p>
             </div>
            
             <img

@@ -8,19 +8,6 @@ import Footer from './components/Footer.js';
 import AppRouter from './components/AppRouter.js';
 
 function App() {
-  const ggggg = useSelector(state => state.auth.authdataMassive);
-  console.log(ggggg)
-
-
-
-
-
-
-
-
-
-
-
     // Плавный переход по ссылкам
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
       for (let smoothLink of smoothLinks) {

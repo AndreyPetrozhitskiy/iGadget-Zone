@@ -9,7 +9,7 @@ import Payment from './header_blocks/Payment.js';
 import News from './header_blocks/News.js';
 import NotFaundPage from './Blocks/NotFaundPage.js';
 import Auth from './Blocks/Auth.js';
-import Register from './Blocks/Register.js';
+
 import Basket from './Blocks/Basket.js';
 
 const AppRouter = () => {
@@ -22,7 +22,6 @@ const AppRouter = () => {
         <Route path='/payment' element={<Payment />}/>
         <Route path='/news' element={<News />}/>
         <Route path='/auth' element={<Auth />}/>
-        <Route path='/register' element={<Register />}/>
         <Route path='/basket' element={<Basket />}/>
         <Route path='*' element={<NotFaundPage />}/>
       </Routes>

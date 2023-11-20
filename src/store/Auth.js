@@ -9,14 +9,17 @@ const dataAuthSlice = createSlice(
         authdataMassive: authdata,
     },
     reducers: {
-
+        login: ( state, action) => {
+        
+        },
       // что-то пока хз
     }
     
   }
 )
 
-export const {} = dataAuthSlice.actions
+export const {login} = dataAuthSlice.actions
+
 export default dataAuthSlice.reducer  
 
 
