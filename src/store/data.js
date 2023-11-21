@@ -9,7 +9,7 @@ const dataSlice = createSlice(
       oneBlockDataMassive: dropdowns,
     },
     reducers: {
-
+        
       // что-то пока хз
     }
     

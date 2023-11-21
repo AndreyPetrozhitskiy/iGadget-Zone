@@ -1,73 +1,101 @@
 import React, { useState } from "react";
+import user from "../../image/user-profile.png"
 import "../../style/auth.scss";
-import { Link } from "react-router-dom";
+import {NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
-import {login} from "../../store/Auth"
+import {register,logout,login} from "../../store/Auth"
 const Auth = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  const [isLogin2, setIsLogin2] = useState(false);
+const [isLogin, setIsLogin] = useState(true);
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
 const DataAuth = useSelector(state => state.auth.authdataMassive)
+const Name = DataAuth[0].login
 const Verif = DataAuth[0].isAuth
-// console.log(DataAuth[0].isAuth)
 const dispatch = useDispatch()
-// const gty = () => {
-//   const data = {
-//       login: "andrey12",
-//       password: 123444,
-//       isAuth: true
-//   }
-//   dispatch(login(data))
-// }
-// gty()
-dispatch(login())
-// console.log(test)
-// test.push(
-//   {
-//     login: "andrey12",
-//     password: 123444,
-//     isAuth: true
-//   }
-// )
-// console.log(test)
+const loginError = DataAuth.loginError;
+const handleLogin = () => {
+  dispatch(login({ login: username, password: password }));
+};
+// const logout = dispatch(logout())
+
   return (
     <div className="auth">
       <div className="auth__container">
       {Verif ? (
         <div className="auth__container-profile">
+            <div className="auth__container-profile__user">
+              <img src={user} />
+              <p>{Name}</p>
+            </div>
+
+            <div className="auth__container-profile__exit">
+            <NavLink to='/basket'><input className="auth__container-profile__exit-basket" 
+              type="button" 
+              value="Корзина" 
+              
+
+
+              // Выйти
+              onClick={() => dispatch(logout())} 
+              /></NavLink>
+              <input className="auth__container-profile__exit-btn" 
+              type="button" 
+              value="Выйти" 
 
 
 
-
-
-          <p>Вы авторизованы</p>
-          <h1 onClick={() => setIsLogin2(false)}>Выйти</h1>
-
-
-
-
-
-
-
+              // Выйти
+              onClick={() => dispatch(logout())} 
+              />
+            </div>
           </div>
           ) : (
             isLogin ? (
               <div className="auth__container-auth">
                 <h1>Авторизация</h1>
-                <input type="text" placeholder="Ваш логин" />
-                <input type="password" placeholder="Ваш пароль" />
-                <input className="auth__btn" type="button" value='Войти'  onClick={() => setIsLogin2(true)}/>
-                <p onClick={() => setIsLogin(false)} >Регистрация</p> 
+                <input type="text" placeholder="Ваш логин"    
+                value={username} 
+                onChange={(e) => setUsername(e.target.value)}/>
+                <input type="password" placeholder="Ваш пароль" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)}
+                />
+                <input className="auth__btn" 
+                type="button" 
+                value='Войти'  
+                onClick={handleLogin}
+                />
+                <p 
+                onClick={() => setIsLogin(false)}>Регистрация</p> 
               </div>
               ) : (
               <div className="auth__container-auth">
                 <h1>Регистрация</h1>
-                <input type="text" placeholder="Ваш логин" />
-                <input type="password" placeholder="Ваш пароль" />
-                <input className="auth__btn" type="button" value='Зарегистрироваться' />
-                <p onClick={() => setIsLogin(true)}>Авторизация</p>
+                <input type="text" placeholder="Ваш логин"
+                value={username} 
+                onChange={(e) => setUsername(e.target.value)}
+                />
+                <input type="password" placeholder="Ваш пароль"
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)}
+                 />
+                <input className="auth__btn" 
+                type="button" 
+                value='Зарегистрироваться'
+                onClick={() => {
+                  dispatch(register({ login:username,password:password }))
+                  console.log(DataAuth[1])
+                }}
+                 />
+                <p 
+                onClick={() => setIsLogin(true)}
+                >Авторизация</p>
               </div>
             )
           )}
+
+{/* 
+          {loginError && <p className="auth__error">{loginError}</p>} */}
       </div>
       </div>
   );
