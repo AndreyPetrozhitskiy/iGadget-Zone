@@ -14,8 +14,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {NavLink } from 'react-router-dom'
 const Header = () => {
   const DataAuth = useSelector(state => state.auth.authdataMassive)
+  const BasketData = useSelector(state => state.basket.BasketMassive)
   const Name = DataAuth[0].login
-  const [priceBusket, setPriceBusket] = useState(130000)
+  const priceBusket = BasketData.reduce((acc, item) => acc + item.countPrice, 0);
   function formatPrice(price) {
     if (typeof price === 'number') {
       price = price.toString();

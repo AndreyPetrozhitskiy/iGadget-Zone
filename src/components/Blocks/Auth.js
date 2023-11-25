@@ -3,7 +3,7 @@ import user from "../../image/user-profile.png"
 import "../../style/auth.scss";
 import {NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
-import {register,logout,login} from "../../store/Auth"
+import {register,logout,login} from "../../store/AuthSlice"
 const Auth = () => {
 const [isLogin, setIsLogin] = useState(true);
 const [username, setUsername] = useState("");
@@ -16,7 +16,9 @@ const loginError = DataAuth.loginError;
 const handleLogin = () => {
   dispatch(login({ login: username, password: password }));
 };
-// const logout = dispatch(logout())
+const handleRegister = () => {
+  dispatch(register({ login:username,password:password }));
+};
 
   return (
     <div className="auth">
@@ -36,7 +38,7 @@ const handleLogin = () => {
 
 
               // Выйти
-              onClick={() => dispatch(logout())} 
+              
               /></NavLink>
               <input className="auth__container-profile__exit-btn" 
               type="button" 
@@ -82,10 +84,10 @@ const handleLogin = () => {
                 <input className="auth__btn" 
                 type="button" 
                 value='Зарегистрироваться'
-                onClick={() => {
-                  dispatch(register({ login:username,password:password }))
-                  console.log(DataAuth[1])
-                }}
+                onClick={
+                  handleRegister
+                  // console.log(DataAuth[1])
+                }
                  />
                 <p 
                 onClick={() => setIsLogin(true)}
