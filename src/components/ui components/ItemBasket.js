@@ -1,8 +1,11 @@
-import React, { useState } from "react"
-import "../../style/Basket.scss"
-const ItemBasket = (props) => {
-  
-   function formatPrice(price) {
+import React from "react";
+import { useDispatch } from 'react-redux';
+import { incrementCount, decrementCount,removeItem } from '../../store/BasketSlice'; // Replace with your actual path
+import cross from "../../image/cross.svg"
+function ItemBasket(props) {
+  const dispatch = useDispatch();
+
+  function formatPrice(price) {
     if (typeof price === 'number') {
       price = price.toString();
     }
@@ -11,25 +14,39 @@ const ItemBasket = (props) => {
     }
     return price;
   }
+
+  const handleIncrement = () => {
+    // Dispatch the incrementCount action with the product's Key
+    dispatch(incrementCount({ Key: props.itemKey }));
+  };
+
+  const handleDecrement = () => {
+    // Dispatch the decrementCount action with the product's Key
+    dispatch(decrementCount({ Key: props.itemKey }));
+  };
+  const removeCard = () => {
+    dispatch(removeItem({Key: props.itemKey}))
+  }
   return (
     <div className="basket__container--product-item">
-            <img src={props.photo} />
-            <div className="basket__container--product-item__block">
-              <div className="basket__container--product-item__info">
-                  <h1>{props.model}</h1>
-                  <p> {formatPrice(props.price)}   {"₽"}</p>
-                  </div>
-
-                <div className="basket__container--product-item__info-counter">
-                    <div className="counter">
-                        <p onClick={console.log("-")}>-</p>
-                        <h1>{props.count}</h1>
-                        <p onClick={console.log("+")}>+</p>
-                    </div>
-                    <h1>{formatPrice(props.countprice)}   {"₽"} </h1>
-                </div>
-              </div>
+      <img src={props.photo} alt={props.model} />
+      <div className="basket__container--product-item__block">
+        <div className="basket__container--product-item__info">
+          <h1>{props.model}</h1>
+          <p>{formatPrice(props.price)} {"₽"}</p>
+        </div>
+        <div className="basket__container--product-item__info-counter">
+          <div className="counter">
+            <p onClick={handleDecrement}>-</p>
+            <h1>{props.count}</h1>
+            <p onClick={handleIncrement}>+</p>
+          </div>
+          <h1>{formatPrice(props.countprice)} {"₽"} </h1>
+        </div>
+      </div>
+      <img src={cross} onClick={removeCard} />
     </div>
-  )
-};
+  );
+}
+
 export default ItemBasket;

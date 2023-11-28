@@ -27,14 +27,15 @@ const Bascket = () => {
         <h1>Корзина</h1>
       <div className="basket__container-content">
           <div className="basket__container--product">
-            {BasketData.map((item )=>(
+            {BasketData.map((item,itemIndex )=>(
               <ItemBasket 
+              key={itemIndex}
               count={item.Count} 
               countprice={item.countPrice} 
               photo={item.Photo} 
               model={item.Model} 
               price={item.Price} 
-              key={item.Key}/>  
+              itemKey={item.Key}/>  
             ))}
           </div>
           <div className="basket__container--payment">
