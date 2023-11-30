@@ -1,9 +1,19 @@
 import React from "react"
 import "../../style/delivery.scss"
-
+import { motion } from "framer-motion";
 const Delivery = () => {
   return (
-    <div className="delivery">
+    <motion.div className="delivery"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{
+      duration: 0.9,
+      ease: "easeInOut",
+      times: [0, 0.2, 0.5, 0.8, 1],
+      repeatDelay: 1
+    }}
+    
+    >
       <div className="dilivery__container">
         <h1>Доставка</h1>
         <p>Наш интернет-магазин осуществляет отправку товаров по Владивостоку и регионам России:</p>
@@ -22,7 +32,7 @@ const Delivery = () => {
           <li>Почтовая доставка ТК СДЕК по России – от 2 дней в зависимости от региона.</li>
         </ol>
       </div>
-    </div>
+    </motion.div>
   )
 };
 

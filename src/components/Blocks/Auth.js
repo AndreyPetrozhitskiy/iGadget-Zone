@@ -4,6 +4,7 @@ import "../../style/auth.scss";
 import {NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import {register,logout,login} from "../../store/AuthSlice"
+import { motion } from "framer-motion";
 const Auth = () => {
 const [isLogin, setIsLogin] = useState(true);
 const [username, setUsername] = useState("");
@@ -21,10 +22,30 @@ const handleRegister = () => {
 };
 
   return (
-    <div className="auth">
+    
+    <motion.div className="auth"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{
+      duration: 0.9,
+      ease: "easeInOut",
+      times: [0, 0.2, 0.5, 0.8, 1],
+      repeatDelay: 1
+    }}
+    >
       <div className="auth__container">
       {Verif ? (
-        <div className="auth__container-profile">
+        <motion.div className="auth__container-profile"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.9,
+          ease: "easeInOut",
+          times: [0, 0.2, 0.5, 0.8, 1],
+          repeatDelay: 1
+        }}
+        
+        >
             <div className="auth__container-profile__user">
               <img src={user} />
               <p>{Name}</p>
@@ -50,7 +71,7 @@ const handleRegister = () => {
               onClick={() => dispatch(logout())} 
               />
             </div>
-          </div>
+          </motion.div>
           ) : (
             isLogin ? (
               <div className="auth__container-auth">
@@ -99,7 +120,7 @@ const handleRegister = () => {
 {/* 
           {loginError && <p className="auth__error">{loginError}</p>} */}
       </div>
-      </div>
+      </motion.div>
   );
 };
 

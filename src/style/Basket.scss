@@ -134,7 +134,12 @@
         position: absolute;
         right: 0;
         top: 10px;
+        transition: 0.5s;
         cursor: pointer;
+        &:hover{
+            transition: 0.5s;
+            transform: rotate(180deg);
+        }
     }
 }
 .basket__container--product-item__block{

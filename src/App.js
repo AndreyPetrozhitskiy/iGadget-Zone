@@ -7,6 +7,7 @@ import Footer from './components/Footer.js';
 
 import AppRouter from './components/AppRouter.js';
 
+
 function App() {
     // Плавный переход по ссылкам
   const smoothLinks = document.querySelectorAll('a[href^="#"]');

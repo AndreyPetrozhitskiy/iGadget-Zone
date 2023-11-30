@@ -2,9 +2,20 @@ import React from "react"
 import "../../style/payment.scss"
 import PhotoCard from "../../image/instcard.png"
 import Bank from "../../image/bank.png"
+import { motion } from "framer-motion";
 const Payment = () => {
   return (
-    <div className="payment">
+    <motion.div className="payment"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{
+      duration: 0.9,
+      ease: "easeInOut",
+      times: [0, 0.2, 0.5, 0.8, 1],
+      repeatDelay: 1
+    }}
+    
+    >
       <div className="payment__container">
           <h1>Оплата</h1>
           <p className="bold">Вы можете оплатить заказ:</p>
@@ -53,7 +64,7 @@ const Payment = () => {
 
 
       </div>
-    </div>
+    </motion.div>
   )
 };
 

@@ -7,12 +7,13 @@ import { Navigation } from 'swiper/modules';
 import Static from "../../image/heart.png";
 import Heart from "../../image/serdce.svg";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {newItem} from "../../store/BasketSlice"
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 const SliderProduct = (props) => {
-  // Перенесено состояние для отслеживания в корзине и добавлено в корзину для каждого товара 
-
   const dispatch = useDispatch()
+  const [isInBasketArray, setIsInBasketArray] = useState(Array(props.array_product.length).fill(false));
   // Форматирование цеников
     function formatPrice(price) {
       if (typeof price === 'number') {
@@ -48,12 +49,21 @@ const SliderProduct = (props) => {
                 <p>{item.Model} </p>
                 <p>{formatPrice(item.Price)}   {"₽"} </p>
                   <div className="slider__product--swiper__item--buttons">
-                      <button
-                    onClick={() => {
-                      dispatch(newItem({ Model: item.Model, Price: item.Price, Photo: item.Photo, Key: item.Id }));
-                    }}>
-                      Купить
-                  </button>
+                  {isInBasketArray[itemIndex] ? (
+                <NavLink to="/basket"><button>В корзине</button></NavLink>
+              ) : (
+                <button
+                  onClick={() => {
+                    dispatch(newItem({ Model: item.Model, Price: item.Price, Photo: item.Photo, Key: item.Id }));
+                    // Создаем новый массив, чтобы изменить состояние только для конкретного элемента
+                    const newArray = [...isInBasketArray];
+                    newArray[itemIndex] = true;
+                    setIsInBasketArray(newArray);
+                  }}
+                >
+                  Купить
+                </button>
+              )}
                         <div className="slider__product--swiper__item--buttons-btnka">
                           <img className="card_button--basket" src={Heart} /> 
                         </div>
