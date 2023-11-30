@@ -13,7 +13,6 @@ const Company = () => {
       times: [0, 0.2, 0.5, 0.8, 1],
       repeatDelay: 1
     }}
-    
     >
       <div className="company__container">
         <h1>О компании</h1>

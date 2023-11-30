@@ -10,8 +10,9 @@ import Static from "../image/heart.png";
 import Heart from "../image/serdce.svg";
 import Basket from "../image/basket.svg";
 import Chevron from "../image/chevron-down.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {NavLink } from 'react-router-dom'
+import { motion } from "framer-motion";
 const Header = () => {
   const DataAuth = useSelector(state => state.auth.authdataMassive)
   const BasketData = useSelector(state => state.basket.BasketMassive)
@@ -58,7 +59,16 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <motion.div className="header"
+    initial={{ opacity: 0.5, y: -75 }}
+    animate={{ opacity: 1,y:0 }}
+    transition={{
+      duration:0.7,
+      ease: "easeInOut",
+      times: [0, 0.2, 0.5, 0.8, 1],
+      repeatDelay: 1
+    }}
+    >
       <div className="header__container">
         <div className="header__container-link--block">
           <div className="header__container-link--block-link">
@@ -154,7 +164,7 @@ const Header = () => {
           
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

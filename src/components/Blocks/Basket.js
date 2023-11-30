@@ -6,10 +6,8 @@ import { motion, AnimatePresence  } from "framer-motion";
 const Bascket = () => {
   const BasketData = useSelector(state => state.basket.BasketMassive)
     // Суммируем все countPrice из массива BasketData
-    
     const totalPayment = BasketData.reduce((acc, item) => acc + item.countPrice, 0);
-
-
+    
     function formatPrice(price) {
       if (typeof price === 'number') {
         price = price.toString();

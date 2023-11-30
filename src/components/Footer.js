@@ -6,8 +6,6 @@ import Insta from "../image/_instagram.png"
 import Whatsap from "../image/_whatsapp.png"
 import Tg from "../image/_telegram.png"
 import Bank from "../image/bank.png"
-
-
 const Footer = () => {
   return (
     <div className="footer">

@@ -1,10 +1,9 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
-import { incrementCount, decrementCount,removeItem } from '../../store/BasketSlice'; // Replace with your actual path
+import { incrementCount, decrementCount,removeItem } from '../../store/BasketSlice'; 
 import cross from "../../image/cross.svg"
 function ItemBasket(props) {
   const dispatch = useDispatch();
-
   function formatPrice(price) {
     if (typeof price === 'number') {
       price = price.toString();
@@ -14,14 +13,10 @@ function ItemBasket(props) {
     }
     return price;
   }
-
   const handleIncrement = () => {
-    // Dispatch the incrementCount action with the product's Key
     dispatch(incrementCount({ Key: props.itemKey }));
   };
-
   const handleDecrement = () => {
-    // Dispatch the decrementCount action with the product's Key
     dispatch(decrementCount({ Key: props.itemKey }));
   };
   const removeCard = () => {
@@ -48,5 +43,4 @@ function ItemBasket(props) {
     </div>
   );
 }
-
 export default ItemBasket;

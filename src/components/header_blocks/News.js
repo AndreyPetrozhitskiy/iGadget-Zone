@@ -12,8 +12,6 @@ const News = () => {
       times: [0, 0.2, 0.5, 0.8, 1],
       repeatDelay: 1
     }}
-    
-    
     >
       <h1 style={{textAlign:'center',fontSize:'60px'}}>В разработке!</h1>
     </motion.div>

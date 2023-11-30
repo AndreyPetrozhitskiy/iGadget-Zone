@@ -1,6 +1,5 @@
 import React from "react"
-import {Routes, Route,Link } from 'react-router-dom'
-
+import {Routes, Route} from 'react-router-dom'
 import HomePage from './HomePage.js';
 import Company from './header_blocks/Company.js';
 import Contacts from './header_blocks/Contacts.js';
@@ -9,9 +8,7 @@ import Payment from './header_blocks/Payment.js';
 import News from './header_blocks/News.js';
 import NotFaundPage from './Blocks/NotFaundPage.js';
 import Auth from './Blocks/Auth.js';
-
 import Basket from './Blocks/Basket.js';
-
 const AppRouter = () => {
   return (
     <Routes >

@@ -10,7 +10,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {newItem} from "../../store/BasketSlice"
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
 const SliderProduct = (props) => {
   const dispatch = useDispatch()
   const [isInBasketArray, setIsInBasketArray] = useState(Array(props.array_product.length).fill(false));

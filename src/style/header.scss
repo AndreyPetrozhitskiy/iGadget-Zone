@@ -44,7 +44,6 @@
     }
   }
 }
-
 .header__container-link--block-number {
   font-size: 24px;
   cursor: pointer;
@@ -124,11 +123,7 @@ top: 40px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
-  // margin-right: 20px;
-  transition: 0.2s;
-  
-  
+  transition: 0.2s; 
 }
 .header__container-search--block-search_bar-icons__block--basket__block{
   display: flex;

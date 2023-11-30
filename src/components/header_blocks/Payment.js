@@ -14,7 +14,6 @@ const Payment = () => {
       times: [0, 0.2, 0.5, 0.8, 1],
       repeatDelay: 1
     }}
-    
     >
       <div className="payment__container">
           <h1>Оплата</h1>
@@ -60,9 +59,6 @@ const Payment = () => {
           </ol>
 
           <img src={Bank} />
-
-
-
       </div>
     </motion.div>
   )

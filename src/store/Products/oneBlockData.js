@@ -1,12 +1,12 @@
 //  Первый блок
-import iphone15pro from '../image/iphone15pro.png'
-import iphone14pro from '../image/iphone14pro.png'
-import iphone13pro from '../image/iphone13pro.png'
-import applemacbook from '../image/applemacbookpro.png'
+import iphone15pro from '../../image/iphone15pro.png'
+import iphone14pro from '../../image/iphone14pro.png'
+import iphone13pro from '../../image/iphone13pro.png'
+import applemacbook from '../../image/applemacbookpro.png'
 
 
-import ipad from '../image/ipad.png'
-import macbook from "../image/macbook.png";
+import ipad from '../../image/ipad.png'
+import macbook from "../../image/macbook.png";
 
 const oneBlockData =[
     // Слайдер

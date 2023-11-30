@@ -15,7 +15,6 @@
   height: 523px;
   cursor: pointer;
 }
-
 .slider__slide-p {
   width: 100%;
   display: block;
@@ -24,8 +23,6 @@
   bottom: 0px;
   cursor: pointer;
   .slider__slide-p-fade {
-    // background-color: rgba(0, 0, 0, 0);
-    // background-image: linear-gradient(to top, rgb(0, 0, 0,0.6), rgba(0, 0, 0, 0));
     background: linear-gradient(to top, #000000, transparent);
     opacity: 0.3;
     opacity: 1.3;

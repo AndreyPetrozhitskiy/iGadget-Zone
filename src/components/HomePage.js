@@ -3,9 +3,8 @@ import OneBlock from './Blocks/OneBlock';
 import ProductBlock from './Blocks/ProductBlock.js';
 import { motion } from "framer-motion";
 // Redux
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 const HomePage = () => {
-    const dispatch = useDispatch()
     // Получение массива с инфой
     const dropdowns = useSelector(state => state.data.oneBlockDataMassive);
   
