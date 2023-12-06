@@ -51,7 +51,7 @@ const MapComponent = () => {
     }
   }, [userLocation]);
 
-  return <div id="map" style={{ height: '100%', width: '100%' }}></div>;
+  return <div id="map" style={{ height: '910px', width: '100%' }}></div>;
 };
 
 export default MapComponent;

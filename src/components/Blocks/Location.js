@@ -6,7 +6,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import axios from 'axios'; // Импортируем Axios
 import MapComponent from './MapLocation';
-
+import { motion, AnimatePresence } from 'framer-motion';
 const Location = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [currentCity, setCurrentCity] = useState("");
@@ -68,14 +68,29 @@ const Location = () => {
         <img src={loc} alt="Location" />
         <p>{currentCity}</p>
       </div>
-      {modalVisible && (
-        <div className="Location__modal" ref={modalRef}>
-          <MapComponent />
-          <img className="" src={cross} alt="Close" onClick={toggleModal} />
-        </div>
-      )}
+      <AnimatePresence>
+        {modalVisible && (
+          <motion.div  
+            className="Location__modal" 
+            ref={modalRef}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+              times: [0, 0.2, 0.5, 0.8, 1],
+              repeatDelay: 1
+            }}
+          >
+            <MapComponent />
+            <img className="" src={cross} alt="Close" onClick={toggleModal} />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
+
 
 export default Location;
