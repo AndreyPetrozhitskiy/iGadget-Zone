@@ -22,6 +22,9 @@
         margin-left: 10px;
         color: white;
         cursor: pointer;
+        &:hover{
+          color: #468966;
+        }
     }
 }
 .Location__modal {
