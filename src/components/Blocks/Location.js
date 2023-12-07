@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Location = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [currentCity, setCurrentCity] = useState("");
+  const [coardination,setCoardination] = useState("")
   const modalRef = useRef(null);
 
   const toggleModal = (e) => {
@@ -42,6 +43,7 @@ const Location = () => {
               const city = response.data.results[0]?.components?.city || "Не удалось определить город";
               console.log('City:', city);
               setCurrentCity(city);
+              setCoardination(`${latitude}  ${longitude}`)
             } catch (error) {
               console.error('Error getting city from coordinates:', error);
             }
@@ -67,6 +69,7 @@ const Location = () => {
       <div className="Location__text" onClick={toggleModal}>
         <img src={loc} alt="Location" />
         <p>{currentCity}</p>
+        <p style={{marginTop:"40px",marginLeft:"-130px"}}>{coardination}</p>
       </div>
       <AnimatePresence>
         {modalVisible && (
