@@ -76,7 +76,7 @@ const Header = () => {
           <NavLink to='/contacts'><p>Контакты</p></NavLink>
           <NavLink to='/delivery'><p>Доставка</p></NavLink>
           <NavLink to='/payment'><p>Оплата</p></NavLink>
-          <NavLink to='/news'><p>Новости</p></NavLink>
+          <NavLink to='/news'><p>HTML 5 API</p></NavLink>
           </div>
           <div className="header__container-link--block-number">
             <p>+7 (999) 999-9-999</p>
