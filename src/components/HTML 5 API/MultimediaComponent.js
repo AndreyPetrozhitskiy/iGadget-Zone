@@ -134,7 +134,7 @@ const MultimediaComponent = () => {
         onMouseMove={handleCanvasMouseMove}
         onMouseUp={handleCanvasMouseUp}
       />
-      <button className='save_canvas' onClick={handleSaveImage}>Сохранить фото</button>
+      <button className='save_canvas' onClick={handleSaveImage}>Сохранить рисунок</button>
     </div>
   );
 };
