@@ -69,6 +69,7 @@ const FakeApiComponent = () => {
           <label>
             Лимит:
             <input
+            id='input_fake-api'
               type="number"
               value={limit}
               onChange={(e) => setLimit(e.target.value)}
@@ -77,7 +78,7 @@ const FakeApiComponent = () => {
           </label>
           {/* Кнопки для загрузки данных */}
           <div className="fakeApi__button-block">
-            <button
+            <button id='fake_api-users'
               onClick={() =>
                 fetchData('users', ['id', 'name', 'username', 'email', 'address', 'phone'])
               }

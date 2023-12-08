@@ -39,7 +39,7 @@ function ItemBasket(props) {
           <h1>{formatPrice(props.countprice)} {"₽"} </h1>
         </div>
       </div>
-      <img src={cross} onClick={removeCard} />
+      <img src={cross} onClick={removeCard} id={`Crest_${props.itemKey}`}/>
     </div>
   );
 }

@@ -9,7 +9,7 @@ import Location from './components/Blocks/Location.js';
 function App() {
   return (
     <div className="App">
-      <Location />
+      {/* <Location /> */}
       <Header />
       <AppRouter />
       <Footer />

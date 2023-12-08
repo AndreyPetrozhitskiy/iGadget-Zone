@@ -104,12 +104,12 @@ const MultimediaComponent = () => {
       <h1>Практическая работа по разделу 3</h1>
 
       {/* Видео Плеер */}
-      <video className='multimedia__video' ref={videoRef} controls>
+      <video id="video_api" className='multimedia__video' ref={videoRef} controls>
         <source src={vidos} type="video/mp4" />
       </video>
 
       {/* Аудио Плеер */}
-      <audio className='multimedia__audio' ref={audioRef} controls>
+      <audio id="audio_api" className='multimedia__audio' ref={audioRef} controls>
         <source src={music} type="audio/mp3" />
       </audio>
 

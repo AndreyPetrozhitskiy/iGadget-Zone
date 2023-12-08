@@ -1,6 +1,14 @@
-describe('Test 5', () => {
-    it('Открывает сайт, находит и кликает по элементу с id="payment"', () => {
-      cy.visit('/');
-      cy.get('#payment').click();
-    });
+describe('Тестирование видео', () => {
+  it('Открывает сайт и взаимодействует с видео', () => {
+    cy.visit('/');
+    cy.wait(1000);
+    cy.get('#news').click();
+    cy.wait(2000);
+    cy.get('#video_api')
+        .should('have.prop', 'paused', true)
+        .and('have.prop', 'ended', false)
+        .then(($video) => {
+          $video[0].play()
+        })
   });
+});
