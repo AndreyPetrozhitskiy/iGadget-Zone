@@ -52,6 +52,7 @@ const SliderProduct = (props) => {
                 <NavLink to="/basket"><button>В корзине</button></NavLink>
               ) : (
                 <button
+                id={`Tovar_${item.Id }`}
                   onClick={() => {
                     dispatch(newItem({ Model: item.Model, Price: item.Price, Photo: item.Photo, Key: item.Id }));
                     // Создаем новый массив, чтобы изменить состояние только для конкретного элемента

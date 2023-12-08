@@ -31,7 +31,7 @@ const ButtonUp = () => {
   };
 
   return (
-    <div className={ `button__up ${isVisible ? "visible" : ""}`} onClick={handlerScrollUp}>
+    <div id="button-ups" className={ `button__up ${isVisible ? "visible" : ""}`} onClick={handlerScrollUp}>
       <img className="button__up--img" src={Arrow} alt="Arrow" />
     </div>
   );

@@ -72,11 +72,11 @@ const Header = () => {
       <div className="header__container">
         <div className="header__container-link--block">
           <div className="header__container-link--block-link">
-          <NavLink to='/company'> <p>О компании</p></NavLink>
-          <NavLink to='/contacts'><p>Контакты</p></NavLink>
-          <NavLink to='/delivery'><p>Доставка</p></NavLink>
-          <NavLink to='/payment'><p>Оплата</p></NavLink>
-          <NavLink to='/news'><p>HTML 5 API</p></NavLink>
+          <NavLink to='/company'> <p id="company" >О компании</p></NavLink>
+          <NavLink to='/contacts'><p id="contacts">Контакты</p></NavLink>
+          <NavLink to='/delivery'><p id="delivery">Доставка</p></NavLink>
+          <NavLink to='/payment'><p id="payment">Оплата</p></NavLink>
+          <NavLink to='/news'><p id="news">HTML 5 API</p></NavLink>
           </div>
           <div className="header__container-link--block-number">
             <p>+7 (999) 999-9-999</p>
@@ -84,7 +84,7 @@ const Header = () => {
         </div>
 
         <div className="header__container-search--block">
-          <NavLink to='/'><img className="header__container-search--block-logo" src={Logo} /></NavLink>
+          <NavLink to='/'><img className="header__container-search--block-logo" src={Logo} id="logo-header"/></NavLink>
           <div className="header__container-search--block-search_bar">
             <input
               className="header__container-search--block-search_bar-input"
@@ -102,6 +102,7 @@ const Header = () => {
           <div className="header__container-search--block-search_bar-icons__block">
             <div className="header__container-search--block-search_bar-icons__block-user">
             <NavLink to='/auth'><img
+                id="user-auth"
                 className="header__container-search--block-search_bar-icons__block-human"
                 src={Human}
               /></NavLink>
@@ -118,6 +119,7 @@ const Header = () => {
             />
             <div className="header__container-search--block-search_bar-icons__block--basket__block">
             <NavLink to='/basket'><img
+                id="basket"
                 className="header__container-search--block-search_bar-icons__block-basket"
                 src={Basket}
               /></NavLink>

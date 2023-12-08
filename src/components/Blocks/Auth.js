@@ -89,6 +89,7 @@ const handleRegister = () => {
                 onClick={handleLogin}
                 />
                 <p 
+                id="user-registration"
                 onClick={() => setIsLogin(false)}>Регистрация</p> 
               </div>
               ) : (
@@ -97,12 +98,15 @@ const handleRegister = () => {
                 <input type="text" placeholder="Ваш логин"
                 value={username} 
                 onChange={(e) => setUsername(e.target.value)}
+                id="user-login"
                 />
                 <input type="password" placeholder="Ваш пароль"
                 value={password} 
                 onChange={(e) => setPassword(e.target.value)}
+                id="user-password"
                  />
                 <input className="auth__btn" 
+                id="register-btn"
                 type="button" 
                 value='Зарегистрироваться'
                 onClick={
